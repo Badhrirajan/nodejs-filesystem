@@ -1,14 +1,14 @@
 // run `node index.js` in the terminal
 // STEP 1: IMPORT ALL NECESSARY PACKAGES
 const express = require('express');
-const { response } = require('./app');
 const HTTP_SERVER = express();
 
 // BASIC SERVER CONFIGS
-const port = 5000;
+const PORT = 5000;
 
-HTTP_SERVER.listen(port, 'localhost', () => {
-  console.log('SERVER STARTED IN THE PORT', port);
+HTTP_SERVER.listen(PORT, '0.0.0.0', (err) => {
+  if(err) throw err;
+  console.log(`SERVER STARTED IN THE PORT ${PORT}`);
 });
 
 // INJECTING API SERVER
